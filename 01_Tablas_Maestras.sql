@@ -69,3 +69,5 @@ CREATE TABLE Existencias (
     
     CONSTRAINT FK_Existencia_Producto FOREIGN KEY (Cod_Producto) REFERENCES Productos(Cod_Producto)
 );
+
+-- ALGO hola un e¿mensaje normal sss
