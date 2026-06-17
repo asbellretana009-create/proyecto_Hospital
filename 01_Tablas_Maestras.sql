@@ -70,4 +70,9 @@ CREATE TABLE Existencias (
     CONSTRAINT FK_Existencia_Producto FOREIGN KEY (Cod_Producto) REFERENCES Productos(Cod_Producto)
 );
 
--- ALGO hola un e¿mensaje normal sss
+-- ALGO hola un e¿mensaje normal sss  NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+    Nombre_Servicio VARCHAR2(100) NOT NULL,
+    Nombre_Especialidad VARCHAR2(100) NOT NULL,
+    Nombre_Desplegar VARCHAR2(100) NOT NULL,
+    Porcentaje_Impuesto NUMBER(4,2) NOT NULL -- Dos dígitos más dos decimales (ej. 13.00 o 04.00)
+);
