@@ -80,3 +80,14 @@ VALUES (3, SYSTIMESTAMP, 18000.00, 'Aprobado', 1);
 -- ¡IMPORTANTE! Guardar los cambios permanentemente
 COMMIT;
 
+
+-- 1. Asegurarnos de que el Producto 1 exista
+INSERT INTO Productos (Nombre, Horas_Max_Reserva) 
+VALUES ('Paracetamol 500mg (Caja)', 0);
+
+-- 2. Ingresar las 500 unidades iniciales a San José
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) 
+VALUES ('SJO', 1, 500, 0);
+
+-- 3. Guardar los cambios permanentemente
+COMMIT;
