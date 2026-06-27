@@ -38,3 +38,45 @@ VALUES ('Limpieza Dental', 'Odontología', 'Limp. Dental', 4.00);
 INSERT INTO Servicios (Nombre_Servicio, Nombre_Especialidad, Nombre_Desplegar, Porcentaje_Impuesto)
 VALUES ('Terapia Física', 'Fisioterapia', 'Fisioterapia', 2.00);
 
+-- ==========================================
+-- 3. INSERTS: PRODUCTOS
+-- ==========================================
+INSERT INTO Productos (Nombre, Horas_Max_Reserva) VALUES ('Paracetamol 500mg (Caja)', 0);
+INSERT INTO Productos (Nombre, Horas_Max_Reserva) VALUES ('Ibuprofeno 400mg (Caja)', 0);
+INSERT INTO Productos (Nombre, Horas_Max_Reserva) VALUES ('Silla de Ruedas Estándar', 48);
+INSERT INTO Productos (Nombre, Horas_Max_Reserva) VALUES ('Muletas de Aluminio (Par)', 72);
+INSERT INTO Productos (Nombre, Horas_Max_Reserva) VALUES ('Suero Fisiológico 500ml', 0);
+
+-- ==========================================
+-- 4. INSERTS: EXISTENCIAS
+-- (Nota: Usaremos 'SJO' para San José y 'LIB' para Liberia)
+-- ==========================================
+-- Existencias en Sucursal SJO (San José)
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) VALUES ('SJO', 1, 500, 0);
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) VALUES ('SJO', 2, 350, 0);
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) VALUES ('SJO', 3, 10, 2);
+
+-- Existencias en Sucursal LIB (Liberia)
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) VALUES ('LIB', 1, 200, 0);
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) VALUES ('LIB', 4, 15, 1);
+INSERT INTO Existencias (Cod_Sucursal, Cod_Producto, Cantidad_Existencia, Cantidad_Reserva) VALUES ('LIB', 5, 100, 0);
+
+-- ==========================================
+-- 5. INSERTS: PRECIOS DE SERVICIOS
+-- (Se asume que el usuario que registra tiene el ID 1)
+-- ==========================================
+-- Precio Consulta General
+INSERT INTO Precios_Servicios (Id_Servicio, Fecha_Inicio, Costo, Estado, Usuario_Registra) 
+VALUES (1, SYSTIMESTAMP, 35000.00, 'Aprobado', 1);
+
+-- Precio Radiografía
+INSERT INTO Precios_Servicios (Id_Servicio, Fecha_Inicio, Costo, Estado, Usuario_Registra) 
+VALUES (2, SYSTIMESTAMP, 25000.00, 'Aprobado', 1);
+
+-- Precio Hemograma
+INSERT INTO Precios_Servicios (Id_Servicio, Fecha_Inicio, Costo, Estado, Usuario_Registra) 
+VALUES (3, SYSTIMESTAMP, 18000.00, 'Aprobado', 1);
+
+-- ¡IMPORTANTE! Guardar los cambios permanentemente
+COMMIT;
+
